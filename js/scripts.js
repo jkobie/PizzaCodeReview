@@ -2,6 +2,7 @@ function Pizza(type, size) {
     this.type = type;
     this.size = size;
     this.toppings = [];
+    this.delivery = false;
 }
 
 Pizza.prototype.cost = function() {
@@ -31,6 +32,9 @@ Pizza.prototype.cost = function() {
         price += 1;
     }
 
+    if(this.delivery == true) {
+        price += 3;
+    }
 
     return price;
 }

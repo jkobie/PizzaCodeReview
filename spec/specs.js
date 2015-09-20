@@ -33,5 +33,11 @@ describe('Pizza', function() {
         testPizza2.toppings.push("olives", "feta");
         expect(testPizza1.cost()).to.equal(11.50);
         expect(testPizza2.cost()).to.equal(22);
-    })
+    });
+
+    it("increases the cost of the pizza if it is delivery", function() {
+        var testPizza1 = new Pizza("basic", "M");
+        testPizza1.delivery = true;
+        expect(testPizza1.cost()).to.equal(13.50);
+    });
 });
