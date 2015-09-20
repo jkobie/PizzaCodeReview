@@ -85,7 +85,7 @@ $(document).ready(function() {
 
         $("ul#toppings").text("");
         newPizza.toppings.forEach(function(topping) {
-            $("ul#toppings").append("<li>" + topping + "</li>");
+            $("ul#toppings").append("<li>" + "+ " + topping + "</li>");
         });
 
         if(newPizza.delivery != "") {
