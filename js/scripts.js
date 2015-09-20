@@ -2,7 +2,7 @@ function Pizza(type, size) {
     this.type = type;
     this.size = size;
     this.toppings = [];
-    this.delivery = false;
+    this.delivery = "";
 }
 
 Pizza.prototype.cost = function() {
@@ -47,7 +47,7 @@ Pizza.prototype.cost = function() {
         price += 1;
     }
 
-    if(this.delivery != false) {
+    if(this.delivery != "") {
         price += 3;
     }
 
@@ -75,6 +75,8 @@ $(document).ready(function() {
                 newPizza.toppings.push(imputtedTopping);
             }
         });
+        var imputtedDelivery = $(".new-delivery").val();
+        newPizza.delivery = imputtedDelivery;
 
         $("#show-pizza").fadeOut();
         $("#show-pizza").fadeIn();
@@ -86,6 +88,10 @@ $(document).ready(function() {
             $("ul#toppings").append("<li>" + topping + "</li>");
         });
 
+        if(newPizza.delivery != "") {
+            $(".delivery").text("Delivered to: " + newPizza.delivery);
+        }
+        
         $(".price").text("Your total is: " + "$" + newPizza.cost());
     });
 });
