@@ -32,9 +32,17 @@ Pizza.prototype.cost = function() {
         price += 1;
     }
 
-    if(this.delivery == true) {
+    if(this.delivery != false) {
         price += 3;
     }
 
     return price;
 }
+
+// function resetFields() {
+//     $("input#new-type").val("")
+// }
+
+$(document).ready(function() {
+
+});
