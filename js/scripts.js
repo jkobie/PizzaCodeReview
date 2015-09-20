@@ -27,5 +27,10 @@ Pizza.prototype.cost = function() {
             break;
     }
 
+    for(var i = 0; i < this.toppings.length; i++) {
+        price += 1;
+    }
+
+
     return price;
 }
