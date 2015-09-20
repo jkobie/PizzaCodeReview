@@ -91,7 +91,7 @@ $(document).ready(function() {
         if(newPizza.delivery != "") {
             $(".delivery").text("Delivered to: " + newPizza.delivery);
         }
-        
-        $(".price").text("Your total is: " + "$" + newPizza.cost());
+
+        $(".price").text("Your total is: " + "$" + newPizza.cost().toFixed(2));
     });
 });
