@@ -15,5 +15,17 @@ Pizza.prototype.cost = function() {
             break;
     }
 
+    switch(this.size) {
+        case "M":
+            price *= 1.5;
+            break;
+        case "L":
+            price *= 2;
+            break;
+        case "XL":
+            price *= 2.5;
+            break;
+    }
+
     return price;
 }

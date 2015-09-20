@@ -22,7 +22,7 @@ describe('Pizza', function() {
     it("calculates the cost of a pizza based on the size of pizza", function() {
         var testPizza1 = new Pizza("basic", "M");
         var testPizza2 = new Pizza("specialty","L");
-        expect(testPizza1.cost()).to.equal(14);
-        expect(testPizza2.cost()).to.equal(22);
+        expect(testPizza1.cost()).to.equal(10.50);
+        expect(testPizza2.cost()).to.equal(20);
     });
 });
