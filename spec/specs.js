@@ -25,4 +25,13 @@ describe('Pizza', function() {
         expect(testPizza1.cost()).to.equal(10.50);
         expect(testPizza2.cost()).to.equal(20);
     });
+
+    it("calculates the cost of a pizza based on the toppings added to the pizza", function() {
+        var testPizza1 = new Pizza("basic", "M");
+        testPizza1.toppings.push("bacon");
+        var testPizza2 = new Pizza("specialty","L");
+        testPizza2.toppings.push("olives", "feta");
+        expect(testPizza1.cost()).to.equal(11.50);
+        expect(testPizza2.cost()).to.equal(22);
+    })
 });
