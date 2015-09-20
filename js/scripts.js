@@ -62,23 +62,30 @@ $(document).ready(function() {
     $("form#new-pizza").submit(function(event) {
         event.preventDefault();
         var imputtedType = $("select#new-type").val();
-        var imputtedSize = $("input#new-size").val();
+        var imputtedSize = "S";
+        $(".new-size").each(function() {
+            if($(this).prop('checked')) {
+                imputtedSize = $(this).val();
+            }
+        });
         var newPizza = new Pizza(imputtedType, imputtedSize);
         $(".new-toppings").each(function() {
-            var imputtedTopping = $(this).find("input.new-toppings").val();
-            debugger;
-            newPizza.toppings.push(imputtedTopping);
+            if($(this).prop('checked')){
+                var imputtedTopping = $(this).val();
+                newPizza.toppings.push(imputtedTopping);
+            }
         });
 
-        $("#show-pizza").fadeOut(500);
-        $("#show-pizza").fadeIn(1000);
+        $("#show-pizza").fadeOut();
+        $("#show-pizza").fadeIn();
         $("#show-pizza h2").text(newPizza.type);
-        $("#size").text(newPizza.size);
+        $(".size").text("Size: " + newPizza.size);
 
         $("ul#toppings").text("");
-
         newPizza.toppings.forEach(function(topping) {
             $("ul#toppings").append("<li>" + topping + "</li>");
         });
+
+        $(".price").text("Your total is: " + "$" + newPizza.cost());
     });
 });
