@@ -9,7 +9,8 @@ describe('Pizza', function() {
 describe('Pizza', function() {
     it("creates a new Pizza with the given type, size, and toppings", function() {
         var testPizza = new Pizza("Pepperoni","L");
-        testPizza.toppings.push(["bacon", "olives"]);
+        testPizza.toppings.push("bacon");
+        testPizza.toppings.push("olives");
         expect(testPizza.toppings).to.eql(["bacon", "olives"]);
     });
 });
