@@ -6,7 +6,7 @@ Setup
 ----------
 * Clone repository:
 ```console
-$ git clone https://github.com/samchalle/word-order.git
+$ git clone git@github.com:jkobie/PizzaCodeReview.git
 ```
 * Open HTML file in browser
 * Enjoy!
